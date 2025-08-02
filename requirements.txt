@@ -1,21 +1,14 @@
-
-Flask==2.3.3
-# OR use FastAPI instead
-# fastapi==0.110.2
-
-gunicorn==21.2.0
-uvicorn==0.30.1  # For FastAPI (ASGI apps)
-
-numpy==1.26.4
-pandas==2.2.2
-scikit-learn==1.4.2
-matplotlib==3.8.4
-tensorflow==2.15.0  # Optional - if you're using deep learning
-
-psycopg2-binary==2.9.9  # For PostgreSQL
-sqlalchemy==2.0.30  # ORM (can be used with PostgreSQL, SQLite, etc.)
-
-python-dotenv==1.0.1  # For managing environment variables
-requests==2.31.0      # For making HTTP requests
-
-pydantic==2.7.1       # Used with FastAPI or input validation
+Flask>=2.3.3
+fastapi>=0.110.2
+gunicorn>=21.2.0
+uvicorn>=0.30.1
+numpy>=1.26.4
+pandas>=2.2.2
+scikit-learn>=1.4.2
+matplotlib>=3.8.4
+tensorflow>=2.15.0 
+psycopg2-binary>=2.9.9
+sqlalchemy>=2.0.30
+python-dotenv>=1.0.1
+requests>=2.31.0
+pydantic>=2.7.1
