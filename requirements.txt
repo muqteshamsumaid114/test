@@ -1,14 +1,32 @@
+# This file specifies Python package dependencies for your project.
+# It uses flexible version specifiers (>=) to allow pip to install
+# the latest compatible version.
+# This file is ready to use, but your environment must be changed
+# to a supported Python version.
+
+# --- Web Framework ---
 Flask>=2.3.3
-fastapi>=0.110.2
+# OR use FastAPI instead
+# fastapi>=0.110.2
+
+# --- ASGI/WSGI Server for Deployment ---
 gunicorn>=21.2.0
 uvicorn>=0.30.1
+
+# --- Machine Learning / Data Science ---
 numpy>=1.26.4
 pandas>=2.2.2
 scikit-learn>=1.4.2
 matplotlib>=3.8.4
-tensorflow>=2.15.0 
+tensorflow>=2.15.0
+
+# --- Database Drivers ---
 psycopg2-binary>=2.9.9
 sqlalchemy>=2.0.30
+
+# --- Other Common Utilities ---
 python-dotenv>=1.0.1
 requests>=2.31.0
+
+# --- Optional: For working with JSON APIs or validation ---
 pydantic>=2.7.1
