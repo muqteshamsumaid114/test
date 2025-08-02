@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Detection Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-xl shadow-2xl w-full max-w-2xl mx-4">
+        <h1 class="text-3xl font-extrabold text-center text-red-800 mb-6">Threat Detection Dashboard</h1>
+        <p class="text-center text-sm text-gray-600 mb-6">This page logs all failed login attempts, which helps in identifying brute-force attacks.</p>
+
+        <a href="{{ url_for('index') }}" class="inline-block mb-6 bg-blue-600 text-white font-bold py-2 px-4 rounded-lg shadow-lg hover:bg-blue-700 transition-colors">
+            ← Back to Dashboard
+        </a>
+
+        {% if threat_logs %}
+            <div class="bg-red-50 p-4 rounded-lg overflow-y-auto max-h-96">
+                <ul class="divide-y divide-red-200">
+                    {% for log in threat_logs %}
+                        <li class="py-3">
+                            <span class="font-semibold text-red-800">{{ log.username }}</span>
+                            <span class="text-gray-600"> tried to log in unsuccessfully at </span>
+                            <span class="font-mono text-sm text-gray-800">{{ log.timestamp_str }}</span>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% else %}
+            <div class="text-center p-6 text-gray-500 bg-gray-100 rounded-lg">
+                No failed login attempts recorded.
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
